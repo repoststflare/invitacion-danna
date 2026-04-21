@@ -5,10 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "XV Años de Danna Abigail | Una Noche de Ensueño",
   description:
-    "Estás cordialmente invitado a celebrar los XV años de Danna Abigail en una noche mágica y cinematográfica.",
+    "Con gran alegría te invitamos a celebrar los XV años de Danna Abigail, una noche llena de amor, ilusión y momentos inolables junto a familiares y amigos.",
   openGraph: {
     title: "XV Años de Danna Abigail",
-    description: "Una celebración elegante y cinematográfica",
+    description:
+      "Acompáñanos a celebrar los XV años de Danna Abigail en una noche llena de alegría, amor y momentos especiales.",
     type: "website",
   },
 };
