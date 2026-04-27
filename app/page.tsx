@@ -26,6 +26,7 @@ export default function QuinceaneraInvitation() {
           transition={{ duration: 1 }}
         >
           <HeroSection />
+          <FamilySection />
           <EventDetails />
           <Countdown />
 

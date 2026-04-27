@@ -37,8 +37,8 @@ const eventDetails = [
       </svg>
     ),
     title: "Sugerencia de Regalo",
-    detail: "Lluvia de sobres o Mesa de regalos",
-    subtitle: "\"Si deseas obsequiarme algo, puedes hacerlo en efectivo o mediante mi mesa de regalos.\"",
+    detail: "Lluvia de sobres o Regalo sorpresa",
+    subtitle: "\"Si deseas obsequiarme algo, puedes hacerlo en efectivo o mediante un detalle especial.\"",
   },
 ];
 

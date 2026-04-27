@@ -7,7 +7,7 @@ import { useRef } from "react";
 const familyData = [
   {
     role: "Mis Padres",
-    members: ["Jonathan González Rodríguez", "Maribel Vega Cristóbal"],
+    members: ["Jhonattan González Rodríguez", "Maribel Vega Cristóbal"],
   },
   {
     role: "Mis Padrinos",

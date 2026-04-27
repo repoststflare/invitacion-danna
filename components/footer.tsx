@@ -194,7 +194,7 @@ export function Footer() {
             style={{ fontFamily: "'Cinzel Decorative', serif" }}
             whileHover={{ scale: 1.05 }}
           >
-            Jonathan González Rodríguez
+            Jhonattan González Rodríguez
             <br />
             <span className="text-xl md:text-2xl text-primary/70">&amp;</span>
             <br />

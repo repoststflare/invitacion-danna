@@ -20,6 +20,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+import { AudioPlayer } from "@/components/audio-player";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="es" className="bg-background">
       <body className="font-sans antialiased overflow-x-hidden">
         {children}
+        <AudioPlayer />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
