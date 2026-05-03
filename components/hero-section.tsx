@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -31,78 +31,70 @@ export function HeroSection() {
     });
 
     tl.to(fondoRef.current, { 
-      y: isMobile ? 100 : 200, 
-      scale: 1.05,
+      y: isMobile ? 80 : 150, 
+      scale: 1.02,
       ease: "none" 
     }, 0)
       .to(castilloRef.current, { 
-        y: isMobile ? -50 : -80, 
-        scale: 1.1,
+        y: isMobile ? -30 : -50, 
+        scale: 1.05,
         ease: "none" 
       }, 0)
       .to(titleRef.current, { 
-        y: isMobile ? -150 : -300, 
-        scale: 0.9,
+        y: isMobile ? -100 : -200, 
+        scale: 0.95,
         opacity: 0, 
         ease: "none" 
       }, 0)
       .to(subjectParallaxRef.current, { 
-        y: isMobile ? -60 : -120, 
-        scale: isMobile ? 0.95 : 1.1,
+        y: isMobile ? -40 : -80, 
+        scale: isMobile ? 0.98 : 1.05,
         ease: "none" 
       }, 0);
 
-    // Living Subject Animation (Idle loop) - decoupled from parallax
+    // Living Subject Animation (Idle loop)
     gsap.to(subjectIdleRef.current, {
-      y: "+=15",
-      rotation: 0.5,
-      duration: 4,
+      y: "+=10",
+      rotation: 0.3,
+      duration: 5,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
     });
 
-    gsap.to(subjectIdleRef.current, {
-      scale: 1.02,
-      duration: 5,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
-
     // Entrance Animations
     gsap.from(".hero-tag", {
       opacity: 0,
-      y: -20,
-      duration: 1.5,
-      delay: 0.5,
+      y: -15,
+      duration: 1.2,
+      delay: 0.2,
       ease: "power3.out",
     });
 
     gsap.from(".hero-xv", {
       opacity: 0,
-      scale: 1.05,
-      filter: "blur(10px)",
-      duration: 1.8,
-      delay: 0.7,
+      scale: 1.02,
+      filter: "blur(8px)",
+      duration: 1.5,
+      delay: 0.4,
       ease: "power2.out",
     });
 
     gsap.from(".hero-name", {
       opacity: 0,
-      scale: 0.95,
-      filter: "blur(10px)",
-      duration: 2,
-      delay: 0.9,
+      scale: 0.98,
+      filter: "blur(8px)",
+      duration: 1.8,
+      delay: 0.6,
       ease: "power2.out",
     });
 
     gsap.from(subjectParallaxRef.current, {
       opacity: 0,
-      y: isMobile ? 40 : 50,
-      scale: isMobile ? 0.75 : 1,
-      duration: 2,
-      delay: 1,
+      y: isMobile ? 30 : 40,
+      scale: isMobile ? 0.85 : 1,
+      duration: 1.8,
+      delay: 0.8,
       ease: "power4.out",
     });
   }, { scope: containerRef });
@@ -113,30 +105,21 @@ export function HeroSection() {
       className="relative h-[110vh] sm:h-[120vh] w-full bg-black overflow-hidden"
     >
       {/* 1. LAYER: FONDO (Deep Background) */}
-      <div
-        ref={fondoRef}
-        className="absolute inset-0 z-0 bg-cover bg-bottom md:bg-center will-change-transform"
-        style={{ backgroundImage: "url('/FONDO.png')", height: "135%" }}
-      />
+      <div ref={fondoRef} className="absolute inset-0 z-0 will-change-transform" style={{ height: "125%" }}>
+        <Image src="/FONDO.png" alt="Fondo" fill priority className="object-cover object-bottom md:object-center" />
+      </div>
 
       {/* 2. LAYER: CASTILLO (Midground) */}
-      <div
-        ref={castilloRef}
-        className="absolute inset-0 z-10 bg-cover bg-bottom md:bg-center will-change-transform"
-        style={{ backgroundImage: "url('/CASTILLO.png')", height: "135%" }}
-      />
+      <div ref={castilloRef} className="absolute inset-0 z-10 will-change-transform" style={{ height: "125%" }}>
+        <Image src="/CASTILLO.png" alt="Castillo" fill priority className="object-cover object-bottom md:object-center" />
+      </div>
 
-      {/* 3. LAYER: TITLE & TEXT (Safe Zone: Top) */}
+      {/* 3. LAYER: TITLE & TEXT */}
       <div
         ref={titleRef}
         className="absolute inset-x-0 top-0 z-20 flex flex-col items-center justify-start text-center px-6 pt-16 sm:pt-24 md:pt-32 will-change-transform"
       >
-        {/* Top Scrim Gradient for text isolation */}
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-black/80 to-transparent pointer-events-none" />
-
-        <div className="relative z-10 hero-top-text w-full">
-
-        </div>
 
         <div className="relative z-10 mt-6 sm:mt-10 flex flex-col items-center">
           <span className="hero-tag text-[10px] sm:text-sm text-[#FFD700] tracking-[0.8em] sm:tracking-[1.2em] uppercase font-light mb-2 sm:mb-4 ml-[0.8em] sm:ml-[1.2em]">
@@ -145,7 +128,7 @@ export function HeroSection() {
           
           <h2
             className="hero-xv text-[2.8rem] sm:text-[6rem] md:text-[7.5rem] leading-none italic font-medium text-gold drop-shadow-2xl mb-1 sm:mb-2"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ fontFamily: "var(--font-cormorant)" }}
           >
             Mis XV Años
           </h2>
@@ -154,38 +137,32 @@ export function HeroSection() {
 
           <h1
             className="hero-name text-[3.8rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] leading-[0.85] font-black italic text-gold drop-shadow-[0_10px_50px_rgba(0,0,0,0.5)] tracking-tighter"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ fontFamily: "var(--font-cormorant)" }}
           >
             Danna Abigail
           </h1>
         </div>
         
         <div className="relative z-10 mt-6 sm:mt-16 text-[#FDEBD0]/80 italic text-lg sm:text-2xl">
-          <p style={{ fontFamily: "'Cormorant Garamond', serif" }} className="tracking-[0.2em]">
+          <p style={{ fontFamily: "var(--font-cormorant)" }} className="tracking-[0.2em]">
             Bienvenidos a Mi Noche Mágica
           </p>
-          <p className="mt-3 sm:mt-6 text-gold text-base sm:text-2xl tracking-[0.6em] sm:tracking-[1em] font-serif uppercase ml-[0.6em] sm:ml-[1em]">
+          <p className="mt-3 sm:mt-6 text-gold text-base sm:text-2xl tracking-[0.6em] sm:tracking-[1em] font-serif uppercase ml-[0.6em] sm:ml-[1em]" style={{ fontFamily: "var(--font-cinzel)" }}>
             20 de Junio, 2025
           </p>
         </div>
       </div>
 
-      {/* 4. LAYER: SUBJECT (Nested for decoupling) */}
+      {/* 4. LAYER: SUBJECT */}
       <div
         ref={subjectParallaxRef}
         className="absolute inset-0 z-30 pointer-events-none will-change-transform pt-20 sm:pt-0"
       >
-        <div
-          ref={subjectIdleRef}
-          className="absolute inset-0 bg-cover bg-bottom md:bg-center will-change-transform"
-          style={{ 
-            backgroundImage: "url('/QUINCEAÑERA.png')", 
-            height: isMobile ? "115%" : "135%" 
-          }}
-        />
+        <div ref={subjectIdleRef} className="absolute inset-0 will-change-transform" style={{ height: isMobile ? "110%" : "125%" }}>
+          <Image src="/QUINCEAÑERA.png" alt="Danna" fill priority className="object-cover object-bottom md:object-center" />
+        </div>
       </div>
 
-      {/* 5. OVERLAYS & HUD */}
       <div className="absolute inset-0 z-40 bg-gradient-to-t from-black via-transparent to-black/30 pointer-events-none" />
 
       {/* Scroll indicator */}

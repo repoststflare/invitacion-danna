@@ -30,7 +30,7 @@ export function FamilySection() {
         >
           <h2
             className="text-4xl md:text-6xl text-gold mb-6 italic font-medium"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ fontFamily: "var(--font-cormorant)" }}
           >
             Con la Bendición de
           </h2>
@@ -55,7 +55,7 @@ export function FamilySection() {
 
               <h3
                 className="text-gold text-xs tracking-[1.2em] uppercase mb-8 font-light relative z-10 ml-[1.2em]"
-                style={{ fontFamily: "'Cinzel', serif" }}
+                style={{ fontFamily: "var(--font-cinzel)" }}
               >
                 {item.role}
               </h3>
@@ -64,7 +64,7 @@ export function FamilySection() {
                   <p
                     key={member}
                     className="text-xl md:text-3xl text-[#FDEBD0]/90 italic font-medium tracking-tight"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    style={{ fontFamily: "var(--font-cormorant)" }}
                   >
                     {member}
                   </p>

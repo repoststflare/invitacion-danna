@@ -160,14 +160,14 @@ export function Footer() {
         >
           <motion.p
             className="text-xl md:text-2xl lg:text-3xl text-foreground italic mb-6"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            style={{ fontFamily: "var(--font-cormorant)" }}
           >
             &ldquo;Cada sueño que tienes es una promesa de lo que puedes llegar
             a ser&rdquo;
           </motion.p>
           <motion.cite
             className="text-muted-foreground not-italic text-lg"
-            style={{ fontFamily: "'Cinzel', serif" }}
+            style={{ fontFamily: "var(--font-cinzel)" }}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -191,7 +191,7 @@ export function Footer() {
           </p>
           <motion.p
             className="text-2xl md:text-3xl text-primary glow-text"
-            style={{ fontFamily: "'Cinzel Decorative', serif" }}
+            style={{ fontFamily: "var(--font-cinzel-decorative)" }}
             whileHover={{ scale: 1.05 }}
           >
             Jhonattan González Rodríguez

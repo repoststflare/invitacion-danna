@@ -1,6 +1,28 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Cormorant_Garamond, Cinzel, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-cinzel",
+  display: "swap",
+});
+
+const cinzelDecorative = Cinzel_Decorative({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-cinzel-decorative",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "XV Años de Danna Abigail | Una Noche de Ensueño",
@@ -29,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className="font-sans antialiased overflow-x-hidden">
+      <body className={`${cormorant.variable} ${cinzel.variable} ${cinzelDecorative.variable} font-sans antialiased overflow-x-hidden`}>
         {children}
         <AudioPlayer />
         {process.env.NODE_ENV === "production" && <Analytics />}

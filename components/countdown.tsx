@@ -70,7 +70,7 @@ function TimeCard({ value, label, index }: TimeUnit & { index: number }) {
             exit={{ y: 40, opacity: 0, rotateX: -90 }}
             transition={{ duration: 0.4, type: "spring" }}
             className="text-5xl sm:text-6xl md:text-7xl text-foreground relative z-10 glow-text"
-            style={{ fontFamily: "'Cinzel Decorative', serif" }}
+            style={{ fontFamily: "var(--font-cinzel-decorative)" }}
           >
             {value.toString().padStart(2, "0")}
           </motion.span>
@@ -79,7 +79,7 @@ function TimeCard({ value, label, index }: TimeUnit & { index: number }) {
         {/* Label */}
         <motion.span
           className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground mt-2 block relative z-10"
-          style={{ fontFamily: "'Cinzel', serif" }}
+          style={{ fontFamily: "var(--font-cinzel)" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 + index * 0.1 }}
@@ -317,7 +317,7 @@ export function Countdown() {
           
           <motion.p
             className="text-lg md:text-xl text-muted-foreground italic"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          style={{ fontFamily: "var(--font-cormorant)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.8, duration: 0.8 }}
