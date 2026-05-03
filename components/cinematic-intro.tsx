@@ -78,6 +78,7 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
     gsap.set(subjectParallaxRef.current, { scale: 1.6, filter: "blur(20px)" });
     gsap.set(".theater-label", { opacity: 0, y: 20 });
     gsap.set(".theater-title", { opacity: 0, scale: 0.9, filter: "blur(10px)" });
+    gsap.set(".theater-xv-container", { opacity: 0, y: -50, scale: 1.1, filter: "blur(20px)" });
     gsap.set([leftCurtainRef.current, rightCurtainRef.current], { xPercent: 0, scale: 1 });
 
     // --- IDLE ANIMATIONS ---
@@ -140,6 +141,15 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
     tl.to(subjectParallaxRef.current, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 2.0, ease: "back.out(1.2)" }, 4.3);
 
     // C. Title Reveal
+    tl.to(".theater-xv-container", {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      duration: 2,
+      ease: "power3.out"
+    }, 4.6);
+
     tl.to(".theater-title", { 
       opacity: 1, 
       scale: 1, 
@@ -212,13 +222,13 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           ref={fondoRef}
-          className="absolute inset-[-10%] bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: "url('/FONDO.png')", backgroundPosition: "center 80%" }}
+          className="absolute inset-[-10%] bg-cover bg-bottom sm:bg-[center_80%] will-change-transform"
+          style={{ backgroundImage: "url('/FONDO.png')" }}
         />
         <div
           ref={castleRef}
-          className="absolute inset-[-5%] bg-cover bg-center z-10 will-change-transform"
-          style={{ backgroundImage: "url('/CASTILLO.png')", backgroundPosition: "center 80%" }}
+          className="absolute inset-[-5%] bg-cover bg-bottom sm:bg-[center_80%] z-10 will-change-transform"
+          style={{ backgroundImage: "url('/CASTILLO.png')" }}
         />
         <div
           ref={subjectParallaxRef}
@@ -226,8 +236,8 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
         >
           <div
             ref={subjectIdleRef}
-            className="absolute inset-0 bg-cover bg-center will-change-transform scale-110"
-            style={{ backgroundImage: "url('/QUINCEAÑERA.png')", backgroundPosition: "center 80%" }}
+            className="absolute inset-0 bg-cover bg-bottom sm:bg-[center_80%] will-change-transform scale-110"
+            style={{ backgroundImage: "url('/QUINCEAÑERA.png')" }}
           />
         </div>
         
@@ -239,24 +249,39 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
       </div>
 
       {/* 4. TITLE */}
-      <div className="relative z-[60] text-center px-6 pt-24 sm:pt-32 md:pt-40 w-full flex flex-col items-center">
-        <div className="relative">
-          <h1
-            className="theater-title text-6xl sm:text-[10rem] md:text-[13rem] text-[#FDEBD0] font-black leading-none select-none italic drop-shadow-2xl"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          >
-            Danna Abigail
-          </h1>
+      <div className="absolute top-4 sm:top-24 md:top-32 z-[60] text-center px-4 w-full flex flex-col items-center">
+        <div className="relative flex flex-col items-center">
+          {/* Professional Layout for Intro */}
+          <div className="theater-xv-container flex flex-col items-center">
+             <span className="text-[10px] sm:text-sm text-[#FFD700] tracking-[1em] uppercase font-light mb-2 sm:mb-4 ml-[1em]">
+               Celebramos los
+             </span>
+             <h2 
+               className="text-[3rem] sm:text-[6.5rem] md:text-[8rem] text-gold italic font-medium leading-none drop-shadow-2xl"
+               style={{ fontFamily: "'Cormorant Garamond', serif" }}
+             >
+               Mis XV Años
+             </h2>
+             
+             <div className="h-px w-12 sm:w-24 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent my-4 sm:my-8" />
+
+             <h1
+               className="theater-title text-[3.8rem] sm:text-[8.5rem] md:text-[11rem] text-gold font-black italic leading-[0.85] tracking-tighter drop-shadow-2xl"
+               style={{ fontFamily: "'Cormorant Garamond', serif" }}
+             >
+               Danna Abigail
+             </h1>
+          </div>
           
-          <div className="theater-label mt-8 text-[#FDEBD0]/90 text-[12px] sm:text-sm tracking-[1.5em] uppercase font-serif drop-shadow-lg">
+          <div className="theater-label mt-4 sm:mt-10 text-[#FDEBD0]/90 text-[9px] sm:text-sm tracking-[0.6em] sm:tracking-[1.5em] uppercase font-serif drop-shadow-lg ml-[0.6em] sm:ml-[1.5em]">
             Bienvenidos a Mi Noche Mágica
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .theater-title {
-          background: linear-gradient(180deg, #FDEBD0 20%, #FFD700 100%);
+        .text-gold {
+          background: linear-gradient(180deg, #FDEBD0 0%, #FFD700 50%, #B8860B 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           filter: drop-shadow(0 0 30px rgba(212,175,55,0.3));
