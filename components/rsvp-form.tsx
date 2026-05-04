@@ -156,12 +156,12 @@ export function RSVPForm() {
     }
 
     const listItems = filledNames
-      .map((n, i) => `🎟 Boleto ${i + 1}: ${n.trim()}`)
+      .map((n, i) => `*Boleto ${i + 1}:* ${n.trim()}`)
       .join("\n");
 
-    const msg = `🌹✨ *CONFIRMACIÓN DE ASISTENCIA* ✨🌹\n\n🎀 *XV Años de Danna Abigail*\n📅 21 de Junio, 2025\n\n🎟 *Boletos reservados: ${ticketCount}*\n\n${listItems}\n\n¡Nos vemos en la celebración! 🎉`;
+    const msg = `*CONFIRMACIÓN DE ASISTENCIA*\n\n✨ *XV Años de Danna Abigail*\n📅 21 de Junio, 2025\n\n🎟 *Boletos reservados: ${ticketCount}*\n\n${listItems}\n\n¡Nos vemos en la celebración! 🥂`;
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
     setSent(true);
   };
