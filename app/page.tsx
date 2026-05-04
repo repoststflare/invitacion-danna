@@ -5,6 +5,7 @@ import { CinematicIntro } from "@/components/cinematic-intro";
 import { HeroSection } from "@/components/hero-section";
 import { EventDetails } from "@/components/event-details";
 import { Countdown } from "@/components/countdown";
+import { RSVPForm } from "@/components/rsvp-form";
 
 
 import { FamilySection } from "@/components/family-section";
@@ -29,8 +30,7 @@ export default function QuinceaneraInvitation() {
           <FamilySection />
           <EventDetails />
           <Countdown />
-
-
+          <RSVPForm />
           <Footer />
         </motion.main>
       )}

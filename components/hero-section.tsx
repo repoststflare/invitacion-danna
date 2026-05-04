@@ -15,6 +15,7 @@ export function HeroSection() {
   const fondoRef = useRef<HTMLDivElement>(null);
   const castilloRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  const dateRef = useRef<HTMLDivElement>(null);
   const subjectParallaxRef = useRef<HTMLDivElement>(null);
   const subjectIdleRef = useRef<HTMLDivElement>(null);
 
@@ -110,6 +111,16 @@ export function HeroSection() {
       ease: "power4.out",
       force3D: true,
     });
+
+    // Welcome & Date Entrance
+    gsap.from(dateRef.current, {
+      opacity: 0,
+      y: 30,
+      filter: "blur(10px)",
+      duration: 1.5,
+      delay: 1.4,
+      ease: "power3.out",
+    });
   }, { scope: containerRef });
 
   return (
@@ -150,14 +161,14 @@ export function HeroSection() {
       {/* 3. LAYER: TITLE (Safe Zone: Top) */}
       <div
         ref={titleRef}
-        className="absolute inset-x-0 top-0 z-20 flex flex-col items-center justify-start text-center px-6 pt-16 sm:pt-24 md:pt-32 will-change-transform"
+        className="absolute inset-x-0 top-0 z-45 flex flex-col items-center justify-start text-center px-6 pt-12 sm:pt-24 md:pt-32 will-change-transform"
       >
         {/* Top Scrim */}
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-black/80 to-transparent pointer-events-none" />
         <div className="relative z-10 hero-top-text w-full" />
         <div className="relative z-10 mt-6 sm:mt-10 flex flex-col items-center">
           <span className="hero-tag text-[10px] sm:text-sm text-[#FFD700] tracking-[0.8em] sm:tracking-[1.2em] uppercase font-light mb-2 sm:mb-4 ml-[0.8em] sm:ml-[1.2em]">
-            Celebramos los
+            Celebramos
           </span>
           <h2
             className="hero-xv text-[2.8rem] sm:text-[6rem] md:text-[7.5rem] leading-none italic font-medium text-gold drop-shadow-2xl mb-1 sm:mb-2"
@@ -167,18 +178,26 @@ export function HeroSection() {
           </h2>
           <div className="h-px w-16 sm:w-32 bg-gradient-to-r from-transparent via-[#FFD700]/50 to-transparent my-3 sm:my-6" />
           <h1
-            className="hero-name text-[3.8rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] leading-[0.85] font-black italic text-gold drop-shadow-[0_10px_50px_rgba(0,0,0,0.5)] tracking-tighter"
+            className="hero-name text-[3.2rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] leading-[0.85] font-black italic text-gold drop-shadow-[0_10px_50px_rgba(0,0,0,0.5)] tracking-tighter"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Danna Abigail
           </h1>
         </div>
-        <div className="relative z-10 mt-6 sm:mt-16 text-[#FDEBD0]/80 italic text-lg sm:text-2xl">
-          <p style={{ fontFamily: "'Cormorant Garamond', serif" }} className="tracking-[0.2em]">
+      </div>
+
+      {/* 3.5 LAYER: DATE & WELCOME (Fixed Bottom Foreground) */}
+      <div
+        ref={dateRef}
+        className="absolute inset-x-0 bottom-24 sm:bottom-32 z-50 flex flex-col items-center text-center px-6 pointer-events-none"
+      >
+        <div className="relative z-10 text-[#FDEBD0]/90 italic text-base sm:text-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <p style={{ fontFamily: "'Cormorant Garamond', serif" }} className="tracking-[0.2em] sm:tracking-[0.4em] uppercase text-[10px] sm:text-lg mb-1 sm:mb-3">
             Bienvenidos a Mi Noche Mágica
           </p>
-          <p className="mt-3 sm:mt-6 text-gold text-base sm:text-2xl tracking-[0.6em] sm:tracking-[1em] font-serif uppercase ml-[0.6em] sm:ml-[1em]">
-            20 de Junio, 2025
+          <div className="h-px w-8 sm:w-16 bg-gold/30 mx-auto mb-2 sm:mb-4" />
+          <p className="text-gold text-lg sm:text-4xl tracking-[0.4em] sm:tracking-[0.8em] font-serif uppercase">
+            21 de Junio, 2025
           </p>
         </div>
       </div>
