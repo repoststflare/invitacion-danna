@@ -159,7 +159,7 @@ export function RSVPForm() {
       .map((n, i) => `*Boleto ${i + 1}:* ${n.trim()}`)
       .join("\n");
 
-    const msg = `*CONFIRMACIÓN DE ASISTENCIA*\n\n✨ *XV Años de Danna Abigail*\n📅 20 de Junio, 2025\n\n🎟 *Boletos reservados: ${ticketCount}*\n\n${listItems}\n\n¡Nos vemos en la celebración! 🥂\n\n🔗 *Link de la Invitación:* ${window.location.origin}`;
+    const msg = `*CONFIRMACIÓN DE ASISTENCIA*\n\n✨ *XV Años de Danna Abigail*\n📅 20 de Junio, 2026\n\n🎟 *Boletos reservados: ${ticketCount}*\n\n${listItems}\n\n¡Nos vemos en la celebración! 🥂`;
 
     const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");

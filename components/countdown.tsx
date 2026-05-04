@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
 
-const targetDate = new Date("2025-06-20T19:00:00");
+const targetDate = new Date("2026-06-20T19:00:00");
 
 interface TimeUnit {
   value: number;
