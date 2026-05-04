@@ -121,16 +121,14 @@ export function HeroSection() {
       <div
         ref={fondoRef}
         className="absolute inset-0 z-0 will-change-transform"
-        style={{ height: "135%" }}
+        style={{ height: "120%" }}
       >
         <Image
           src="/FONDO.png"
           alt="Fondo"
           fill
           priority
-          quality={100}
           className="object-cover object-bottom md:object-center"
-          sizes="100vw"
         />
       </div>
 
@@ -138,16 +136,14 @@ export function HeroSection() {
       <div
         ref={castilloRef}
         className="absolute inset-0 z-10 will-change-transform"
-        style={{ height: "135%" }}
+        style={{ height: "120%" }}
       >
         <Image
           src="/CASTILLO.png"
           alt="Castillo"
           fill
           priority
-          quality={100}
           className="object-cover object-bottom md:object-center"
-          sizes="100vw"
         />
       </div>
 
@@ -195,16 +191,14 @@ export function HeroSection() {
         <div
           ref={subjectIdleRef}
           className="absolute inset-0 will-change-transform"
-          style={{ height: "115%" }}
+          style={{ height: "110%" }}
         >
           <Image
             src="/QUINCEAÑERA.png"
             alt="Quinceañera Danna Abigail"
             fill
             priority
-            quality={100}
-            className="object-cover object-bottom md:object-center scale-110"
-            sizes="100vw"
+            className="object-cover object-bottom md:object-center scale-105"
           />
         </div>
       </div>

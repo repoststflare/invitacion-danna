@@ -75,9 +75,9 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
       [fondoRef.current, castleRef.current, subjectParallaxRef.current, introTextRef.current],
       { opacity: 0, force3D: true }
     );
-    gsap.set(fondoRef.current, { scale: 1.3, force3D: true });
-    gsap.set(castleRef.current, { scale: 1.4, filter: "blur(4px)", force3D: true });
-    gsap.set(subjectParallaxRef.current, { scale: 1.5, filter: "blur(3px)", force3D: true });
+    gsap.set(fondoRef.current, { scale: 1.1, force3D: true });
+    gsap.set(castleRef.current, { scale: 1.15, filter: "blur(4px)", force3D: true });
+    gsap.set(subjectParallaxRef.current, { scale: 1.1, filter: "blur(3px)", force3D: true });
     gsap.set(".theater-label", { opacity: 0, y: 20 });
     gsap.set(".theater-title", { opacity: 0, scale: 0.92, filter: "blur(2px)" });
     gsap.set(".theater-xv-container", { opacity: 0, y: -40, scale: 1.08, filter: "blur(5px)" });
@@ -142,8 +142,8 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
     }, 3.3);
 
     // C. Reveal layers
-    tl.to(fondoRef.current, { opacity: 1, scale: 1.08, duration: 2.2, ease: "power2.out", force3D: true }, 3.6);
-    tl.to(castleRef.current, { opacity: 1, scale: 1.15, filter: "blur(0px)", duration: 2.2, ease: "power2.out", force3D: true }, 3.8);
+    tl.to(fondoRef.current, { opacity: 1, scale: 1.05, duration: 2.2, ease: "power2.out", force3D: true }, 3.6);
+    tl.to(castleRef.current, { opacity: 1, scale: 1.1, filter: "blur(0px)", duration: 2.2, ease: "power2.out", force3D: true }, 3.8);
     tl.to(subjectParallaxRef.current, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.8, ease: "back.out(1.1)", force3D: true }, 4.1);
 
     // D. Title reveal
@@ -278,14 +278,12 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
             className="absolute inset-0 will-change-transform scale-110"
           >
             <Image
-              src="/QUINCEAÑERA.png"
-              alt="Quinceañera"
-              fill
-              priority
-              quality={100}
-              className="object-cover object-bottom sm:object-[center_80%]"
-              sizes="100vw"
-            />
+            src="/QUINCEAÑERA.png"
+            alt="Quinceañera Danna Abigail"
+            fill
+            priority
+            className="object-cover object-bottom md:object-center scale-105"
+          />
           </div>
         </div>
 
