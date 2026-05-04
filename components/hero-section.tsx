@@ -197,7 +197,7 @@ export function HeroSection() {
           </p>
           <div className="h-px w-8 sm:w-16 bg-gold/30 mx-auto mb-2 sm:mb-4" />
           <p className="text-gold text-lg sm:text-4xl tracking-[0.4em] sm:tracking-[0.8em] font-serif uppercase">
-            21 de Junio, 2025
+            20 de Junio, 2025
           </p>
         </div>
       </div>
