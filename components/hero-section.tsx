@@ -128,7 +128,7 @@ export function HeroSection() {
           alt="Fondo"
           fill
           priority
-          quality={90}
+          quality={100}
           className="object-cover object-bottom md:object-center"
           sizes="100vw"
         />
@@ -145,7 +145,7 @@ export function HeroSection() {
           alt="Castillo"
           fill
           priority
-          quality={90}
+          quality={100}
           className="object-cover object-bottom md:object-center"
           sizes="100vw"
         />
@@ -202,7 +202,7 @@ export function HeroSection() {
             alt="Quinceañera Danna Abigail"
             fill
             priority
-            quality={92}
+            quality={100}
             className="object-cover object-bottom md:object-center scale-110"
             sizes="100vw"
           />

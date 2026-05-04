@@ -76,11 +76,11 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
       { opacity: 0, force3D: true }
     );
     gsap.set(fondoRef.current, { scale: 1.3, force3D: true });
-    gsap.set(castleRef.current, { scale: 1.4, filter: "blur(20px)", force3D: true });
-    gsap.set(subjectParallaxRef.current, { scale: 1.5, filter: "blur(15px)", force3D: true });
+    gsap.set(castleRef.current, { scale: 1.4, filter: "blur(4px)", force3D: true });
+    gsap.set(subjectParallaxRef.current, { scale: 1.5, filter: "blur(3px)", force3D: true });
     gsap.set(".theater-label", { opacity: 0, y: 20 });
-    gsap.set(".theater-title", { opacity: 0, scale: 0.92, filter: "blur(8px)" });
-    gsap.set(".theater-xv-container", { opacity: 0, y: -40, scale: 1.08, filter: "blur(15px)" });
+    gsap.set(".theater-title", { opacity: 0, scale: 0.92, filter: "blur(2px)" });
+    gsap.set(".theater-xv-container", { opacity: 0, y: -40, scale: 1.08, filter: "blur(5px)" });
     gsap.set([leftCurtainRef.current, rightCurtainRef.current], { xPercent: 0, force3D: true });
 
     // --- IDLE: subject floating ---
@@ -212,7 +212,7 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
           alt="Telón izquierdo"
           fill
           priority
-          quality={90}
+          quality={100}
           className="object-cover"
           sizes="50vw"
         />
@@ -227,7 +227,7 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
           alt="Telón derecho"
           fill
           priority
-          quality={90}
+          quality={100}
           className="object-cover"
           sizes="50vw"
         />
@@ -246,9 +246,9 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
             alt="Fondo"
             fill
             priority
-            quality={90}
+            quality={100}
             className="object-cover object-bottom sm:object-[center_80%]"
-            sizes="120vw"
+            sizes="100vw"
           />
         </div>
 
@@ -262,9 +262,9 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
             alt="Castillo"
             fill
             priority
-            quality={90}
+            quality={100}
             className="object-cover object-bottom sm:object-[center_80%]"
-            sizes="115vw"
+            sizes="100vw"
           />
         </div>
 
@@ -282,9 +282,9 @@ export function CinematicIntro({ onComplete }: { onComplete: () => void }) {
               alt="Quinceañera"
               fill
               priority
-              quality={92}
+              quality={100}
               className="object-cover object-bottom sm:object-[center_80%]"
-              sizes="110vw"
+              sizes="100vw"
             />
           </div>
         </div>
