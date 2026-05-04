@@ -1,17 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { CinematicIntro } from "@/components/cinematic-intro";
-import { motion } from "framer-motion";
+import { HeroSection } from "@/components/hero-section";
+import { EventDetails } from "@/components/event-details";
+import { Countdown } from "@/components/countdown";
 
-const HeroSection = dynamic(() => import("@/components/hero-section").then(mod => mod.HeroSection), { 
-  ssr: true,
-});
-const EventDetails = dynamic(() => import("@/components/event-details").then(mod => mod.EventDetails));
-const Countdown = dynamic(() => import("@/components/countdown").then(mod => mod.Countdown));
-const FamilySection = dynamic(() => import("@/components/family-section").then(mod => mod.FamilySection));
-const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer));
+
+import { FamilySection } from "@/components/family-section";
+import { Footer } from "@/components/footer";
+import { motion } from "framer-motion";
 
 export default function QuinceaneraInvitation() {
   const [showContent, setShowContent] = useState(false);

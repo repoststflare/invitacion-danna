@@ -173,7 +173,7 @@ function DetailCard({
       {/* Title */}
       <motion.h3
         className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-3 relative z-10"
-        style={{ fontFamily: "var(--font-cinzel)" }}
+        style={{ fontFamily: "'Cinzel', serif" }}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: 0.5 + index * 0.2 }}
@@ -184,7 +184,7 @@ function DetailCard({
       {/* Main detail */}
       <motion.p
         className="text-2xl md:text-4xl text-[#FDFCEB] mb-2 relative z-10 glow-text italic font-light"
-        style={{ fontFamily: "var(--font-cormorant)" }}
+        style={{ fontFamily: "'Cormorant Garamond', serif" }}
       >
         {item.detail}
       </motion.p>
@@ -192,7 +192,7 @@ function DetailCard({
       {/* Subtitle */}
       <motion.p
         className="text-muted-foreground italic relative z-10 whitespace-pre-line leading-relaxed"
-        style={{ fontFamily: "var(--font-cormorant)" }}
+        style={{ fontFamily: "'Cormorant Garamond', serif" }}
       >
         {item.subtitle}
       </motion.p>
@@ -360,7 +360,7 @@ export function EventDetails() {
 
           <motion.h2
             className="text-4xl md:text-6xl text-[#FDFCEB] mb-6 italic"
-            style={{ fontFamily: "var(--font-cormorant)" }}
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             animate={isHeaderInView ? { opacity: 1, letterSpacing: "0.05em" } : { opacity: 0, letterSpacing: "0.2em" }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -370,7 +370,7 @@ export function EventDetails() {
 
           <motion.p
             className="text-xl md:text-2xl text-muted-foreground italic max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-cormorant)" }}
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
             initial={{ opacity: 0, y: 20 }}
             animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -415,13 +415,13 @@ export function EventDetails() {
             </p>
             <p
               className="text-2xl text-[#D4AF37] glow-text relative z-10 italic"
-              style={{ fontFamily: "var(--font-cormorant)" }}
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Gala Esmeralda
             </p>
             <p
               className="text-sm text-muted-foreground italic mt-2 relative z-10"
-              style={{ fontFamily: "var(--font-cormorant)" }}
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               El color Verde Esmeralda está reservado exclusivamente para la Quinceañera
             </p>
