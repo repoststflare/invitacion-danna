@@ -414,16 +414,10 @@ export function EventDetails() {
               Codigo de Vestimenta
             </p>
             <p
-              className="text-2xl text-[#D4AF37] glow-text relative z-10 italic"
+              className="text-xl md:text-2xl text-[#D4AF37] glow-text relative z-10 italic mt-2"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Gala Esmeralda
-            </p>
-            <p
-              className="text-sm text-muted-foreground italic mt-2 relative z-10"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              El color Verde Esmeralda está reservado exclusivamente para la Quinceañera
+              El color Verde Esmeralda está reservado para la Quinceañera
             </p>
           </motion.div>
         </motion.div>
